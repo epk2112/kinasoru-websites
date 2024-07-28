@@ -2339,6 +2339,95 @@ span.email-notes {
   margin: 0;
   padding-top: 30px;
 }
+/* Products Area CSS */
+.products-area {
+  background: #f9f9f9; 
+  padding-bottom: 80px; /* Adjust as needed */
+}
+
+.products-carousel {
+  margin-top: 40px;
+}
+
+.single-product {
+  text-align: center;
+  margin-bottom: 30px; 
+}
+
+.product-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-content {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-content h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.product-content ul li {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3EC1D5;
+  color: white;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.product-content a:hover {
+  background-color: #3cd6ed;
+}
+
+/* Responsive Styles (for smaller screens) */
+@media (max-width: 768px) {
+  .single-product {
+    margin-bottom: 20px;
+  }
+  .products-carousel .owl-item {
+    margin: 0 5px;
+  }
+}
+
+/* Ensure Carousel Works Correctly */
+.products-carousel .owl-nav {
+  display: none; /* Hide default navigation */
+}
+
+.products-carousel .owl-dots {
+  text-align: center; 
+  margin-top: 20px;
+}
+
+.products-carousel .owl-dots button {
+  background: #ccc;
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.products-carousel .owl-dots button.active {
+  background: #3EC1D5;
+}
 
 /*----------------------------------------
  .End CSS
