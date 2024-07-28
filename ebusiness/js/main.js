@@ -230,6 +230,28 @@
     });
   });
 
+  $(document).ready(function() {
+    // Make the table responsive using DataTables
+    $('.achievements-table table').DataTable({
+      responsive: true,
+      paging: false, // Disable pagination for this table
+      searching: false // Disable search for this table
+    });
+  });
+
+
+  $(document).ready(function() {
+    // Add a click event to each partner name
+    $('.partners-list li').click(function() {
+      // Get the partner's name
+      var partnerName = $(this).text();
+  
+      // Replace this with your actual logic for handling the click
+      // For example, you could open a modal, load a new page, or trigger another function
+      alert("You clicked on: " + partnerName);
+    });
+  });
+
   /*---------------------
      Google Maps
   --------------------- */

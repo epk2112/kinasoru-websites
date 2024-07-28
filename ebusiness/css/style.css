@@ -2429,6 +2429,173 @@ span.email-notes {
   background: #3EC1D5;
 }
 
+
+/* Impact Area CSS */
+.impact-area {
+  background: #f9f9f9;
+  padding-bottom: 80px;
+}
+
+.impact-left {
+  text-align: center;
+  margin-bottom: 30px; 
+}
+
+.impact-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.impact-right {
+  text-align: left; 
+  padding: 20px;
+}
+
+.impact-content {
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.impact-content h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.impact-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.impact-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.impact-content ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.impact-content ul li i {
+  margin-right: 10px;
+  color: #3EC1D5;
+}
+
+.impact-content ul li strong {
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .impact-left, .impact-right {
+    text-align: center;
+  }
+  .impact-left img {
+    margin-bottom: 20px;
+  }
+  .impact-content {
+    padding: 20px;
+  }
+}
+
+
+/* Achievements Area CSS */
+.achievements-area {
+  background: #f9f9f9; 
+  padding-bottom: 80px;
+}
+
+.achievements-table {
+  margin-top: 40px;
+}
+
+.achievements-table table {
+  width: 100%;
+}
+
+.achievements-table th,
+.achievements-table td {
+  text-align: left;
+  padding: 12px;
+}
+
+.achievements-table th {
+  background-color: #3EC1D5;
+  color: white;
+  font-weight: bold;
+}
+
+.achievements-table td {
+  border-top: 1px solid #ddd;
+}
+
+.achievements-table td:last-child {
+  text-align: left;
+}
+
+/* Responsive Styles (for smaller screens) */
+@media (max-width: 768px) {
+  .achievements-table table {
+    font-size: 13px;
+  }
+  .achievements-table th,
+  .achievements-table td {
+    padding: 10px;
+  }
+}
+
+/* Partners Area CSS */
+.partners-area {
+  background: #f9f9f9; 
+  padding-bottom: 80px;
+}
+
+.partners-list {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.partners-list ul {
+  list-style: none; 
+  padding: 0;
+  display: inline-block;
+}
+
+.partners-list li {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.partners-list li:hover {
+  background: #3EC1D5;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .partners-list ul {
+    display: block;
+    text-align: center;
+  }
+  .partners-list li {
+    display: block;
+    margin: 10px auto; 
+  }
+}
 /*----------------------------------------
  .End CSS
 ----------------------------------------*/
