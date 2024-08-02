@@ -10,7 +10,7 @@ $(document).ready(function () {
         body.removeClass('iframe');
     }
 
-    // Function to dynamically load HTML content
+
     function loadComponent(componentId, filePath) {
         $.get(filePath, function(data) {
             $('#' + componentId).html(data);
@@ -19,6 +19,14 @@ $(document).ready(function () {
             } else if (componentId === 'header-container') {
                 setupHeaderFunctionality();
             }
+            // Force re-calculation
+            setTimeout(function() { 
+                $('.background').each(function () {
+                    var imgpath = $(this).find('img');
+                    $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
+                    imgpath.hide();
+                });
+            }, 10); // A small timeout is enough
         });
     }
     
