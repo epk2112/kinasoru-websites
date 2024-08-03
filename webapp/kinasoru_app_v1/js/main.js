@@ -25,6 +25,9 @@ $(document).ready(function () {
             </a>
         </div>
         <div class="ml-auto col-auto pl-0">
+        <button type="button" class="btn btn-link btn-40 colorsettings">
+                        <span class="material-icons">color_lens</span>
+                    </button>
             <a href="notification.html" class="menu-btn btn btn-40 btn-link">
                 <span class="material-icons">notifications_none</span>
                 <span class="counter"></span>
@@ -173,6 +176,27 @@ $(document).ready(function () {
     $('#header-container').html(headerHTML);
     $('#footer-container').html(footerHTML);
     $('#menu-container').html(menuHTML);
+
+    // Setup component functionality
+    setupComponentFunctionality('menu-container');
+    setupComponentFunctionality('header-container');
+
+
+function setupComponentFunctionality(componentId) {
+    if (componentId === 'menu-container') {
+        setupMenuFunctionality();
+    } else if (componentId === 'header-container') {
+        setupHeaderFunctionality();
+    }
+    // Force re-calculation
+    setTimeout(function() { 
+        $('.background').each(function () {
+            var imgpath = $(this).find('img');
+            $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
+            imgpath.hide();
+        });
+    }, 10); // A small timeout is enough
+}
 
     function setupMenuFunctionality() {
         /* menu open close */
