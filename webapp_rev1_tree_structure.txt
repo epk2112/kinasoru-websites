@@ -1,4 +1,4 @@
-kinasoru_app_v1/
+finwallapp_og/
   avatar.html
   manifest.json
   addcard.html
@@ -22,10 +22,8 @@ kinasoru_app_v1/
   refer_friends.html
   switch.html
   progress.html
-  footer.html
   wallet.html
   add_money.html
-  header.html
   shop.html
   forgot_password.html
   send_money.html
@@ -49,7 +47,6 @@ kinasoru_app_v1/
   cart.html
   alert.html
   products.html
-  menu.html
   buttonandgroups.html
   form.html
   collapse.html

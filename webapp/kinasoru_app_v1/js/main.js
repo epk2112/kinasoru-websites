@@ -10,24 +10,43 @@ $(document).ready(function () {
         body.removeClass('iframe');
     }
 
-
     function loadComponent(componentId, filePath) {
-        $.get(filePath, function(data) {
-            $('#' + componentId).html(data);
-            if (componentId === 'menu-container') {
-                setupMenuFunctionality();
-            } else if (componentId === 'header-container') {
-                setupHeaderFunctionality();
+        // Check if we're running locally
+        if (window.location.protocol === 'file:') {
+            // If running locally, use synchronous XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, false);
+            xhr.send();
+            if (xhr.status === 200) {
+                $('#' + componentId).html(xhr.responseText);
+                if (componentId === 'menu-container') {
+                    setupMenuFunctionality();
+                } else if (componentId === 'header-container') {
+                    setupHeaderFunctionality();
+                }
+            } else {
+                console.error('Failed to load ' + filePath);
             }
-            // Force re-calculation
-            setTimeout(function() { 
-                $('.background').each(function () {
-                    var imgpath = $(this).find('img');
-                    $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
-                    imgpath.hide();
-                });
-            }, 10); // A small timeout is enough
-        });
+        } else {
+            // If running on a server, use the original AJAX method
+            $.get(filePath, function(data) {
+                $('#' + componentId).html(data);
+                if (componentId === 'menu-container') {
+                    setupMenuFunctionality();
+                } else if (componentId === 'header-container') {
+                    setupHeaderFunctionality();
+                }
+            });
+        }
+        
+        // Force re-calculation
+        setTimeout(function() { 
+            $('.background').each(function () {
+                var imgpath = $(this).find('img');
+                $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
+                imgpath.hide();
+            });
+        }, 10); // A small timeout is enough
     }
     
     // Load Header
