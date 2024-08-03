@@ -28,11 +28,11 @@ $(document).ready(function () {
         <button type="button" class="btn btn-link btn-40 colorsettings">
                         <span class="material-icons">color_lens</span>
                     </button>
-            <a href="notification.html" class="menu-btn btn btn-40 btn-link">
+            <a href="#" class="menu-btn btn btn-40 btn-link">
                 <span class="material-icons">notifications_none</span>
                 <span class="counter"></span>
             </a>
-            <a href="profile.html" class="avatar avatar-30 shadow-sm rounded-circle ml-2">
+            <a href="#" class="avatar avatar-30 shadow-sm rounded-circle ml-2">
                 <figure class="m-0 background">
                     <img src="img/user1.png" alt="">
                 </figure>
@@ -52,25 +52,25 @@ $(document).ready(function () {
             </a>
         </div>
         <div class="col-auto">
-            <a href="shop.html" class="">
+            <a href="#" class="">
                 <i class="material-icons">shopping_bag</i>
                 <p>Shop</p>
             </a>
         </div>
         <div class="col-auto">
-            <a href="my-farms.html">
+            <a href="#">
                 <i class="material-icons">eco</i>
                 <p>My Farms</p>
             </a>
         </div>
         <div class="col-auto">
-            <a href="blog.html">
+            <a href="#">
                 <i class="material-icons">article</i>
                 <p>Blog</p>
             </a>
         </div>
         <div class="col-auto">
-            <a href="profile.html" class="">
+            <a href="#" class="">
                 <i class="material-icons">account_circle</i>
                 <p>Profile</p>
             </a>
@@ -117,7 +117,7 @@ $(document).ready(function () {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="refer_friends.html">
+                <a class="nav-link" href="#">
                     <div>
                         <span class="material-icons icon">perm_contact_calendar</span>
                         Refer Friends
@@ -127,7 +127,7 @@ $(document).ready(function () {
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="my_orders.html">
+                <a class="nav-link" href="#">
                     <div>
                         <span class="material-icons icon">shopping_bag</span>
                         My Orders
@@ -136,7 +136,7 @@ $(document).ready(function () {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="my_farms.html">
+                <a class="nav-link" href="#">
                     <div>
                         <span class="material-icons icon">account_tree</span>
                         My Farms
@@ -145,7 +145,7 @@ $(document).ready(function () {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="blog.html">
+                <a class="nav-link" href="#">
                     <div>
                         <span class="material-icons icon">article</span>
                         Blog
@@ -154,7 +154,7 @@ $(document).ready(function () {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="setting.html">
+                <a class="nav-link" href="#">
                     <div>
                         <span class="material-icons icon">settings</span>
                         Settings
@@ -165,7 +165,7 @@ $(document).ready(function () {
 
         </ul>
         <div class="text-center">
-            <a href="login.html" class="btn btn-outline-danger text-white rounded my-3 mx-auto">Sign out</a>
+            <a href="#" class="btn btn-outline-danger text-white rounded my-3 mx-auto">Sign out</a>
         </div>
     </div>
 </div>
