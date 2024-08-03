@@ -10,53 +10,169 @@ $(document).ready(function () {
         body.removeClass('iframe');
     }
 
-    function loadComponent(componentId, filePath) {
-        // Check if we're running locally
-        if (window.location.protocol === 'file:') {
-            // If running locally, use synchronous XMLHttpRequest
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', filePath, false);
-            xhr.send();
-            if (xhr.status === 200) {
-                $('#' + componentId).html(xhr.responseText);
-                if (componentId === 'menu-container') {
-                    setupMenuFunctionality();
-                } else if (componentId === 'header-container') {
-                    setupHeaderFunctionality();
-                }
-            } else {
-                console.error('Failed to load ' + filePath);
-            }
-        } else {
-            // If running on a server, use the original AJAX method
-            $.get(filePath, function(data) {
-                $('#' + componentId).html(data);
-                if (componentId === 'menu-container') {
-                    setupMenuFunctionality();
-                } else if (componentId === 'header-container') {
-                    setupHeaderFunctionality();
-                }
-            });
-        }
-        
-        // Force re-calculation
-        setTimeout(function() { 
-            $('.background').each(function () {
-                var imgpath = $(this).find('img');
-                $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
-                imgpath.hide();
-            });
-        }, 10); // A small timeout is enough
-    }
-    
-    // Load Header
-    loadComponent('header-container', 'header.html');
-    
-    // Load Footer
-    loadComponent('footer-container', 'footer.html');
-    
-    // Load menu
-    loadComponent('menu-container', 'menu.html');
+    // Inline HTML content
+    var headerHTML = `
+        <header class="header">
+    <div class="row">
+        <div class="col-auto px-0">
+            <button class="menu-btn btn btn-40 btn-link" type="button">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+        <div class="text-left col align-self-center">
+            <a class="navbar-brand" href="#">
+                <h5 class="mb-0">KINASORU</h5>
+            </a>
+        </div>
+        <div class="ml-auto col-auto pl-0">
+            <a href="notification.html" class="menu-btn btn btn-40 btn-link">
+                <span class="material-icons">notifications_none</span>
+                <span class="counter"></span>
+            </a>
+            <a href="profile.html" class="avatar avatar-30 shadow-sm rounded-circle ml-2">
+                <figure class="m-0 background">
+                    <img src="img/user1.png" alt="">
+                </figure>
+            </a>
+        </div>
+    </div>
+</header>
+    `;
+
+    var footerHTML = `
+    <div class="footer">
+    <div class="row no-gutters justify-content-center">
+        <div class="col-auto">
+            <a href="index.html" class="active">
+                <i class="material-icons">home</i>
+                <p>Home</p>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="shop.html" class="">
+                <i class="material-icons">shopping_bag</i>
+                <p>Shop</p>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="my-farms.html">
+                <i class="material-icons">eco</i>
+                <p>My Farms</p>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="blog.html">
+                <i class="material-icons">article</i>
+                <p>Blog</p>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="profile.html" class="">
+                <i class="material-icons">account_circle</i>
+                <p>Profile</p>
+            </a>
+        </div>
+    </div>
+</div>
+    `;
+
+    var menuHTML = `
+    <div class="main-menu">
+    <div class="row mb-4 no-gutters">
+        <div class="col-auto"><button class="btn btn-link btn-40 btn-close text-white"><span class="material-icons">chevron_left</span></button></div>
+        <div class="col-auto">
+            <div class="avatar avatar-40 rounded-circle position-relative">
+                <figure class="background">
+                    <img src="img/user1.png" alt="">
+                </figure>
+            </div>
+        </div>
+        <div class="col pl-3 text-left align-self-center">
+            <h6 class="mb-1">Aman Ng'oma</h6>
+            <p class="small text-default-secondary">Dodoma, TZ</p>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div class="row mb-4">
+            <div class="col">
+                <h4 class="mb-1 font-weight-normal">Tsh 780,000</h4>
+                <p class="text-default-secondary">My Balance</p>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-default btn-40 rounded-circle" data-toggle="modal" data-target="#addmoney"><i class="material-icons">add</i></button>
+            </div>
+        </div>
+
+        <ul class="nav nav-pills flex-column ">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                    <div>
+                        <span class="material-icons icon">account_balance</span>
+                        Home
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="refer_friends.html">
+                    <div>
+                        <span class="material-icons icon">perm_contact_calendar</span>
+                        Refer Friends
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="my_orders.html">
+                    <div>
+                        <span class="material-icons icon">shopping_bag</span>
+                        My Orders
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="my_farms.html">
+                    <div>
+                        <span class="material-icons icon">account_tree</span>
+                        My Farms
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">
+                    <div>
+                        <span class="material-icons icon">article</span>
+                        Blog
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="setting.html">
+                    <div>
+                        <span class="material-icons icon">settings</span>
+                        Settings
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+
+        </ul>
+        <div class="text-center">
+            <a href="login.html" class="btn btn-outline-danger text-white rounded my-3 mx-auto">Sign out</a>
+        </div>
+    </div>
+</div>
+<div class="backdrop"></div>
+    `;
+
+    // Load inline content
+    $('#header-container').html(headerHTML);
+    $('#footer-container').html(footerHTML);
+    $('#menu-container').html(menuHTML);
 
     function setupMenuFunctionality() {
         /* menu open close */
