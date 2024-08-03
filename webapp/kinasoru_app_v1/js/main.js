@@ -252,9 +252,10 @@ function setupComponentFunctionality(componentId) {
     function setupHeaderFunctionality() {
         /* color settings */
         $(document).on('click', '.color-picker .btn', function () {
-            $('.color-picker').toggleClass('active');
+            $(this).toggleClass('active');
             return false;
         });
+
 
         $(document).on('click', '.theme-color', function () {
             var style = $(this).attr('data-color');
