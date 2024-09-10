@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Table with Dynamic Colors and Font Size</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Lato&family=Open+Sans&family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-font: 'Roboto', sans-serif;
+            --main-bg-color: #f0fff0;
+            --table-bg-color: #ffffff;
+            --header-bg-color: #2e8b57;
+            --header-text-color: white;
+            --row-hover-color: #e6ffe6;
+            --even-row-color: #f2fff2;
+            --total-row-color: #98fb98;
+            --border-color: #ddd;
+            --text-color: #333;
+            --font-size: 16px;
+        }
+        body {
+            font-family: var(--main-font);
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            font-size: var(--font-size);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--table-bg-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--header-bg-color);
+            color: var(--header-text-color);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: var(--even-row-color);
+        }
+        tr:hover {
+            background-color: var(--row-hover-color);
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: var(--total-row-color);
+        }
+        .currency {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>NA</th>
+                <th>AWAMU</th>
+                <th colspan="2">SHUGHULI KWA EKARI</th>
+                <th>FEDHA (TZS)</th>
+                <th>JUMLA NDOGO</th>
+                <th>DEADLINE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">1</td>
+                <td rowspan="5">KWANZA</td>
+                <td colspan="2">Kukodi</td>
+                <td class="currency">100,000.00</td>
+                <td rowspan="5" class="currency">330,000.00</td>
+                <td rowspan="5">28th Aug 2024</td>
+            </tr>
+            <tr>
+                <td colspan="2">Ada ya ushauri na usimamizi</td>
+                <td class="currency">100,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kusafisha</td>
+                <td class="currency">30,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kulima</td>
+                <td class="currency">70,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kupanda</td>
+                <td class="currency">30,000.00</td>
+            </tr>
+            <tr>
+                <td rowspan="5">2</td>
+                <td rowspan="5">PILI</td>
+                <td rowspan="3">Mbolea 1</td>
+                <td>Dap-1</td>
+                <td class="currency">77,000.00</td>
+                <td rowspan="5" class="currency">314,300.00</td>
+                <td rowspan="5">28th Nov 2024</td>
+            </tr>
+            <tr>
+                <td>Urea -1</td>
+                <td class="currency">67,300.00</td>
+            </tr>
+            <tr>
+                <td>Wawekaji</td>
+                <td class="currency">60,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Palizi(madawa)</td>
+                <td class="currency">65,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Dawa za wadudu</td>
+                <td class="currency">45,000.00</td>
+            </tr>
+            <tr>
+                <td rowspan="5">3</td>
+                <td rowspan="5">TATU</td>
+                <td rowspan="3">Mbolea 2</td>
+                <td>Can 2</td>
+                <td class="currency">124,600.00</td>
+                <td rowspan="5" class="currency">301,900.00</td>
+                <td rowspan="5">15th Jan 2025</td>
+            </tr>
+            <tr>
+                <td>Urea 1</td>
+                <td class="currency">67,300.00</td>
+            </tr>
+            <tr>
+                <td>Wawekaji</td>
+                <td class="currency">30,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kutoa mbelewele</td>
+                <td class="currency">50,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kutoa Madume</td>
+                <td class="currency">30,000.00</td>
+            </tr>
+            <tr>
+                <td rowspan="5">4</td>
+                <td rowspan="5">NNE</td>
+                <td colspan="2">Kuvuna mbegu</td>
+                <td class="currency">60,000.00</td>
+                <td rowspan="5" class="currency">454,000.00</td>
+                <td rowspan="5">15th April 2025</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kupukuchua</td>
+                <td class="currency">30,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kusafisha shambani 1</td>
+                <td class="currency">32,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kusafirisha ghalani</td>
+                <td class="currency">300,000.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Kusafisha ghalani 2</td>
+                <td class="currency">32,000.00</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="3">JUMLA</td>
+                <td colspan="4" class="currency">1,400,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function changeFont(fontName) {
+            document.documentElement.style.setProperty('--main-font', fontName);
+        }
+
+        function changeColorTheme(theme) {
+            switch(theme) {
+                case 'green':
+                    setColors('#f0fff0', '#2e8b57', '#e6ffe6', '#f2fff2', '#98fb98');
+                    break;
+                case 'blue':
+                    setColors('#e6f2ff', '#1e90ff', '#d4e6ff', '#e6f2ff', '#4db8ff');
+                    break;
+                case 'red':
+                    setColors('#fff0f0', '#ff4500', '#ffe6e6', '#fff2f2', '#ff9999');
+                    break;
+                // Add more color themes as needed
+            }
+        }
+
+        function setColors(mainBg, headerBg, rowHover, evenRow, totalRow) {
+            document.documentElement.style.setProperty('--main-bg-color', mainBg);
+            document.documentElement.style.setProperty('--header-bg-color', headerBg);
+            document.documentElement.style.setProperty('--row-hover-color', rowHover);
+            document.documentElement.style.setProperty('--even-row-color', evenRow);
+            document.documentElement.style.setProperty('--total-row-color', totalRow);
+        }
+
+        function changeFontSize(size) {
+            document.documentElement.style.setProperty('--font-size', size + 'px');
+        }
+    </script>
+</body>
+</html>
