@@ -79,8 +79,8 @@ $(document).ready(function () {
 </div>
     `;
 
-    var menuHTML = `
-    <div class="main-menu">
+   var menuHTML = `
+<div class="main-menu">
     <div class="row mb-4 no-gutters">
         <div class="col-auto"><button class="btn btn-link btn-40 btn-close text-white"><span class="material-icons">chevron_left</span></button></div>
         <div class="col-auto">
@@ -91,86 +91,79 @@ $(document).ready(function () {
             </div>
         </div>
         <div class="col pl-3 text-left align-self-center">
-            <h6 class="mb-1">Aman Ng'oma</h6>
-            <p class="small text-default-secondary">Dodoma, TZ</p>
+            <h6 id="menu-username" class="mb-1">Guest</h6>
+            <p id="menu-location" class="small text-default-secondary">Not Logged In</p>
         </div>
     </div>
     <div class="menu-container">
         <div class="row mb-4">
             <div class="col">
-                <h4 class="mb-1 font-weight-normal">Tsh 780,000</h4>
+                <h4 id="menu-balance" class="mb-1 font-weight-normal">Tsh 0</h4>
                 <p class="text-default-secondary">My Balance</p>
             </div>
             <div class="col-auto">
                 <button class="btn btn-default btn-40 rounded-circle" data-toggle="modal" data-target="#addmoney"><i class="material-icons">add</i></button>
             </div>
         </div>
-
         <ul class="nav nav-pills flex-column ">
             <li class="nav-item">
                 <a class="nav-link active" href="index.html">
                     <div>
-                        <span class="material-icons icon">account_balance</span>
+                        <span class="material-icons icon">home</span> <!-- Changed from account_balance -->
                         Home
                     </div>
                     <span class="arrow material-icons">chevron_right</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="refer_friends.html">
                     <div>
-                        <span class="material-icons icon">perm_contact_calendar</span>
-                        Refer Friends
-                    </div>
-                    <span class="arrow material-icons">chevron_right</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <div>
-                        <span class="material-icons icon">shopping_bag</span>
-                        My Orders
+                        <span class="material-icons icon">perm_contact_calendar</span> Refer Friends
                     </div>
                     <span class="arrow material-icons">chevron_right</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="my_orders.html">
                     <div>
-                        <span class="material-icons icon">account_tree</span>
+                        <span class="material-icons icon">shopping_bag</span> My Orders
+                    </div>
+                    <span class="arrow material-icons">chevron_right</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> <!-- Link to my_farms.html -->
+                    <div>
+                        <span class="material-icons icon">eco</span> <!-- Changed from account_tree -->
                         My Farms
                     </div>
                     <span class="arrow material-icons">chevron_right</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#"> <!-- Link to blog.html -->
                     <div>
-                        <span class="material-icons icon">article</span>
-                        Blog
+                        <span class="material-icons icon">article</span> Blog
                     </div>
                     <span class="arrow material-icons">chevron_right</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="setting.html">
                     <div>
-                        <span class="material-icons icon">settings</span>
-                        Settings
+                        <span class="material-icons icon">settings</span> Settings
                     </div>
                     <span class="arrow material-icons">chevron_right</span>
                 </a>
             </li>
-
         </ul>
         <div class="text-center">
-            <a href="#" class="btn btn-outline-danger text-white rounded my-3 mx-auto">Sign out</a>
+            <a href="login.html" id="signout-button" class="btn btn-outline-danger text-white rounded my-3 mx-auto">Sign out</a>
         </div>
     </div>
 </div>
 <div class="backdrop"></div>
-    `;
+`;
 
     // Load inline content
     $('#header-container').html(headerHTML);
@@ -181,6 +174,102 @@ $(document).ready(function () {
     setupComponentFunctionality('menu-container');
     setupComponentFunctionality('header-container');
 
+
+function setupMenuFunctionality() {
+    /* menu open close */
+    $(document).on('click', '.main-menu .btn-close', function () {
+        if (body.hasClass('menu-overlay') === true) {
+            body.removeClass('menu-open');
+        } else {
+            body.removeClass('menu-active');
+            body.removeClass('menu-open');
+            $('html').removeClass('menu-open');
+        }
+        return false;
+    });
+    $(document).on('click', '.menu-btn', function () {
+        // Update menu with current user info before opening
+        const currentUser = JSON.parse(localStorage.getItem('kinasoruCurrentUser'));
+        if (currentUser) {
+            $('#menu-username').text(currentUser.username.split('@')[0]); // Show part before @ if email
+            $('#menu-location').text('Logged In'); // Or some other relevant info
+            $('#signout-button').text('Sign Out').attr('href', '#'); // Change to # for JS handling
+        } else {
+            $('#menu-username').text('Guest');
+            $('#menu-location').text('Not Logged In');
+            $('#signout-button').text('Sign In').attr('href', 'login.html');
+        }
+
+        if (body.hasClass('menu-overlay') === true) {
+            body.addClass('menu-open');
+        } else {
+            body.addClass('menu-active');
+            body.addClass('menu-open');
+            $('html').addClass('menu-open');
+        }
+        return false;
+    });
+    $(document).on('click', '.main-menu + .backdrop', function (e) {
+        if (body.hasClass('menu-open') === true) {
+            body.removeClass('menu-open');
+        }
+        return false;
+    });
+
+    /* menu style switch */
+    $(document).on('change', '#menu-pushcontent', function () {
+        if ($(this).is(':checked') === true) {
+            body.addClass('menu-push-content');
+            mainmenu.css('display', 'block');
+            body.removeClass('menu-overlay');
+        }
+        return false;
+    });
+    $(document).on('change', '#menu-overlay', function () {
+        if ($(this).is(':checked') === true) {
+            body.removeClass('menu-push-content');
+            mainmenu.css('display', 'block');
+            body.addClass('menu-overlay');
+        }
+        return false;
+    });
+
+    // Sign out logic
+    $(document).on('click', '#signout-button', function(e) {
+        if ($(this).attr('href') === '#') { // Only if it's a sign out action
+            e.preventDefault();
+            localStorage.removeItem('kinasoruCurrentUser');
+            // Update menu immediately
+            $('#menu-username').text('Guest');
+            $('#menu-location').text('Not Logged In');
+            $(this).text('Sign In').attr('href', 'login.html');
+             // Optionally, close the menu
+            if (body.hasClass('menu-open') === true) {
+                body.removeClass('menu-open');
+            }
+            // Redirect to login or home
+            window.location.href = 'login.html';
+        }
+        // If href is login.html, it will navigate normally
+    });
+}
+
+// At the end of your $(document).ready() in main.js, or where you initialize user-dependent UI:
+$(document).ready(function() {
+    // ... your existing code ...
+
+    // Check login status and update header/profile links
+    const currentUser = JSON.parse(localStorage.getItem('kinasoruCurrentUser'));
+    if (currentUser) {
+        // Example: Update a profile link in the main header
+        $('.header .avatar').parent('a').attr('href', 'profile.html'); // Assuming profile.html is the user profile page
+        // You might also want to update the username display in the header if you have one there
+        // Example: $('#header-username').text(currentUser.username);
+    } else {
+        // User not logged in, ensure profile links go to login or are hidden
+        $('.header .avatar').parent('a').attr('href', 'login.html');
+    }
+});    
 
 function setupComponentFunctionality(componentId) {
     if (componentId === 'menu-container') {
