@@ -7,25 +7,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>KINASORU -  East Africa's Agricultural Marketplace</title>
-
+    <title>KINASORU - East Africa's Agricultural Marketplace</title>
     <!-- manifest meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="img/favicon180.png" sizes="180x180">
     <link rel="icon" href="img/favicon32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="img/favicon16.png" sizes="16x16" type="image/png">
-
     <!-- Material icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
     <!-- swiper CSS -->
     <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet" id="style">
 </head>
@@ -52,104 +46,234 @@
         </div>
     </div>
 
-
     <!-- menu main -->
     <div id="menu-container"></div>
-    
 
     <!-- Begin page content -->
     <main class="flex-shrink-0 main has-footer">
         <!-- Fixed navbar -->
         <div id="header-container"></div>
 
-        <div class="container mt-3 mb-4">
-            <h1 class="text-center mb-4 text-white">Welcome to Kinasoru</h1>
-            
-
-            <div class="container ">
-                
-                <div class="row text-center mt-3">
-                    <div class="col-6 col-md-3">
+        <div class="container mt-3 mb-4 text-center"> <!-- text-white was here, removed for better contrast with main-container -->
+            <h1 class="mb-4 text-white">Welcome to Kinasoru</h1>
+            <div class="row text-center mt-3">
+                <div class="col-6 col-md-3">
+                    <a href="shop.html" class="text-decoration-none">
                         <div class="card border-0 mb-4">
                             <div class="card-body">
-                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default">
+                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default mx-auto">
                                     <i class="material-icons vm md-36 text-template">shopping_cart</i>
                                 </div>
                                 <h3 class="mt-3 mb-0 font-weight-normal"></h3>
                                 <p class="text-secondary small">Buy Products</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-3">
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="text-decoration-none"> <!-- Link to my_farms.html if it exists or relevant page -->
                         <div class="card border-0 mb-4">
                             <div class="card-body">
-                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default">
+                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default mx-auto">
                                     <i class="material-icons vm md-36 text-template">eco</i>
                                 </div>
                                 <h3 class="mt-3 mb-0 font-weight-normal"></h3>
                                 <p class="text-secondary small">My Farms</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-3">
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                     <a href="#" class="text-decoration-none"> <!-- Link to consultations page if it exists -->
                         <div class="card border-0 mb-4">
                             <div class="card-body">
-                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default">
+                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default mx-auto">
                                     <i class="material-icons vm md-36 text-template">book</i>
                                 </div>
                                 <h3 class="mt-3 mb-0 font-weight-normal"></h3>
                                 <p class="text-secondary small">Consultations</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-3">
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="analytics.html" class="text-decoration-none"> <!-- Link to market prices/analytics -->
                         <div class="card border-0 mb-4">
                             <div class="card-body">
-                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default">
+                                <div class="avatar avatar-60 bg-default-light rounded-circle text-default mx-auto">
                                     <i class="material-icons vm md-36 text-template">bar_chart</i>
                                 </div>
                                 <h3 class="mt-3 mb-0 font-weight-normal"></h3>
                                 <p class="text-secondary small">Market Prices</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
-            
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title h5">Latest Updates</h2>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">New organic fertilizers in stock</li>
-                        <li class="list-group-item">Upcoming workshop: Sustainable Farming</li>
-                        <li class="list-group-item">Market alert: Maize prices rising</li>
-                    </ul>
-                </div>
-            </div>
-            
-           
-            </div>
-            <!-- PWA add to home display -->
-            <div class="container mb-4">
-                <div class="card" id="addtodevice">
-                    <div class="card-body text-center">
-                        <div class="row mb-3">
-                            <div class="col-10 col-md-4 mx-auto"><img src="img/install-app.png" alt="" class="mw-100"></div>
-                        </div>
+        </div>
 
-                        <h5 class="text-dark">Add to <span class="font-weight-bold">Home screen</span></h5>
-                        <p class="text-secondary">See PWA app as in fullscreen on your device.</p>
-                        <button class="btn btn-sm btn-default px-4 rounded" id="addtohome">Install</button>
+        <!-- Featured Products Section -->
+        <div class="container mb-4">
+            <div class="row mb-3">
+                <div class="col">
+                    <h4 class="mb-0">Featured Products</h4>
+                </div>
+                <div class="col-auto">
+                    <a href="shop.html" class="btn btn-sm btn-outline-default rounded">View All</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card border-0 mb-4 overflow-hidden">
+                        <div class="card-body h-150 position-relative">
+                            <div class="top-right m-2">
+                                <button class="btn btn-sm btn-light btn-rounded btn-40 rounded-circle"><i class="material-icons mt-0 vm">favorite_border</i></button>
+                            </div>
+                            <a href="product_details.html" class="background">
+                                <img src="img/image1.jpg" alt="Fresh Tomatoes">
+                            </a>
+                        </div>
+                        <div class="card-body ">
+                            <p class="mb-0"><small class="text-secondary">Vegetables</small></p>
+                            <a href="product_details.html">
+                                <p class="mb-0">Organic Tomatoes</p>
+                            </a>
+                            <h5 class="mb-0 text-success">Tsh 5,000/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card border-0 mb-4 overflow-hidden">
+                        <div class="card-body h-150 position-relative">
+                            <div class="top-right m-2">
+                                <button class="btn btn-sm btn-light btn-rounded btn-40 rounded-circle text-danger"><i class="material-icons mt-0 vm ">favorite</i></button>
+                            </div>
+                            <a href="product_details.html" class="background">
+                                <img src="img/image7.jpg" alt="Fresh Maize">
+                            </a>
+                        </div>
+                        <div class="card-body ">
+                            <p class="mb-0"><small class="text-secondary">Cereals</small></p>
+                            <a href="product_details.html">
+                                <p class="mb-0">Fresh Maize Cobs</p>
+                            </a>
+                            <h5 class="mb-0 text-success">Tsh 10,000/bag</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card border-0 mb-4 overflow-hidden">
+                        <div class="card-body h-150 position-relative">
+                             <div class="top-right m-2">
+                                <button class="btn btn-sm btn-light btn-rounded btn-40 rounded-circle"><i class="material-icons mt-0 vm">favorite_border</i></button>
+                            </div>
+                            <a href="product_details.html" class="background">
+                                <img src="img/image4.jpg" alt="Coffee Beans">
+                            </a>
+                        </div>
+                        <div class="card-body ">
+                            <p class="mb-0"><small class="text-secondary">Cash Crops</small></p>
+                            <a href="product_details.html">
+                                <p class="mb-0">Arabica Coffee Beans</p>
+                            </a>
+                            <h5 class="mb-0 text-success">$25/kg</h5>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card border-0 mb-4 overflow-hidden">
+                        <div class="card-body h-150 position-relative">
+                             <div class="top-right m-2">
+                                <button class="btn btn-sm btn-light btn-rounded btn-40 rounded-circle"><i class="material-icons mt-0 vm">favorite_border</i></button>
+                            </div>
+                            <a href="product_details.html" class="background">
+                                <img src="img/image5.jpg" alt="Avocados">
+                            </a>
+                        </div>
+                        <div class="card-body ">
+                            <p class="mb-0"><small class="text-secondary">Fruits</small></p>
+                            <a href="product_details.html">
+                                <p class="mb-0">Hass Avocados</p>
+                            </a>
+                            <h5 class="mb-0 text-success">Tsh 8,000/crate</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- PWA add to home display -->
+        </div>
+
+        <!-- How Kinasoru Works Section -->
+        <div class="container mb-4">
+            <h4 class="mb-3 text-center">How Kinasoru Works</h4>
+            <div class="row text-center">
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 bg-default-light rounded-circle text-default mx-auto mb-3">
+                                <i class="material-icons vm md-36 text-template">storefront</i>
+                            </div>
+                            <h5>Farmers List Products</h5>
+                            <p class="text-secondary small">Producers showcase fresh produce and agricultural goods to a wide audience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 bg-success-light rounded-circle text-success mx-auto mb-3">
+                                <i class="material-icons vm md-36 text-template">saved_search</i>
+                            </div>
+                            <h5>Buyers Discover</h5>
+                            <p class="text-secondary small">Easily find and explore a wide range of local and international agricultural items.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="avatar avatar-60 bg-warning-light rounded-circle text-warning mx-auto mb-3">
+                                <i class="material-icons vm md-36 text-template">handshake</i>
+                            </div>
+                            <h5>Connect & Transact</h5>
+                            <p class="text-secondary small">Securely connect, negotiate terms, and complete your agricultural transactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join Our Community Section -->
+        <div class="container mb-4">
+            <div class="card text-center text-white bg-default shadow-default">
+                <div class="card-body p-4">
+                    <div class="avatar avatar-80 mb-3 mx-auto bg-white-light rounded-circle">
+                         <i class="material-icons display-4 text-white">groups</i>
+                    </div>
+                    <h3 class="mb-3">Grow with Kinasoru!</h3>
+                    <p class="lead mb-4">Are you a farmer or agricultural producer? Join our platform to reach more buyers, expand your market, and access valuable resources.</p>
+                    <a href="signup.html" class="btn btn-light btn-lg rounded">Become a Seller</a>
+                </div>
+            </div>
         </div>
         
+        <!-- PWA add to home display -->
+        <div class="container mb-4">
+            <div class="card" id="addtodevice">
+                <div class="card-body text-center">
+                    <div class="row mb-3">
+                        <div class="col-10 col-md-4 mx-auto"><img src="img/install-app.png" alt="" class="mw-100"></div>
+                    </div>
+                    <h5 class="text-dark">Add to <span class="font-weight-bold">Home screen</span></h5>
+                    <p class="text-secondary">See PWA app as in fullscreen on your device.</p>
+                    <button class="btn btn-sm btn-default px-4 rounded" id="addtohome">Install</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- footer-->
-    <div id="footer-container"></div> 
+    <div id="footer-container"></div>
 
     <!-- color settings style switcher -->
     <div class="color-picker">
@@ -168,7 +292,6 @@
                 <button class="btn btn-link text-secondary btn-round colorsettings2"><span class="material-icons">close</span></button>
             </div>
         </div>
-
         <hr class="mt-2">
         <div class="colorselect">
             <input type="radio" id="templatecolor1" name="sidebarcolorselect">
@@ -228,26 +351,19 @@
         </div>
     </div>
 
-
-
     <!-- Required jquery and libraries -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- cookie js -->
     <script src="js/jquery.cookie.js"></script>
-
-    <!-- Swiper slider  js-->
+    <!-- Swiper slider js-->
     <script src="vendor/swiper/js/swiper.min.js"></script>
-
-    <!-- Customized jquery file  -->
+    <!-- Customized jquery file -->
     <script src="js/main.js"></script>
     <script src="js/color-scheme-demo.js"></script>
-
     <!-- PWA app service registration and works -->
     <script src="js/pwa-services.js"></script>
-
     <!-- page level custom script -->
     <script src="js/app.js"></script>
 </body>
